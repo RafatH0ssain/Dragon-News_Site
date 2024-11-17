@@ -1,7 +1,11 @@
+import SocialsLogin from "./SocialsLogin";
+import FindUsOn from "./FindUsOn";
+
 const RightNavbar = () => {
     return (
-        <div>
-            Right ASide added
+        <div className="space-y-10">
+            <SocialsLogin/>
+            <FindUsOn/>
         </div>
     );
 };
