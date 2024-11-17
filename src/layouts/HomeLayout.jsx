@@ -1,10 +1,19 @@
+import Header from "../components/Header";
+import LatestNews from "../components/LatestNews";
+
 const HomeLayout = () => {
-    return
+    return (
         <div>
-            <header></header>
+            <header>
+                <Header />
+                <section className="w-11/12 mx-auto pt-5">
+                    <LatestNews></LatestNews>
+                </section>
+            </header>
             <nav></nav>
             <main></main>
-        </div>;
+        </div>
+        );
 };
 
 export default HomeLayout;
