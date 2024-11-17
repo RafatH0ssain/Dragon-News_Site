@@ -39,7 +39,7 @@ const Navbar = () => {
             </div>
             <div className="navbar-end login">
                 <img src={userIcon} alt="Dummy User Picture" className="px-4"/>
-                <a className="btn btn-neutral rounded-xl ">Login</a>
+                <Link to="/auth/login" className="btn btn-neutral rounded-xl">Login</Link>
             </div>
         </div>
     );

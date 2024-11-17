@@ -2,20 +2,21 @@ import React from "react";
 import { createBrowserRouter, Navigate } from "react-router-dom";
 import HomeLayout from "../layouts/HomeLayout";
 import CategoryNews from "../pages/CategoryNews";
+import AuthLayout from "../layouts/AuthLayout";
 
 const router = createBrowserRouter([
     {
         path: '/',
-        element: <HomeLayout/>,
+        element: <HomeLayout />,
         children: [
             {
                 index: true,
-                element: <Navigate to="category/01" replace/>
+                element: <Navigate to="/category/01" replace />
             },
             {
                 path: '/category/:id',
-                element: <CategoryNews/>,
-                loader: ({params}) => fetch(`https://openapi.programming-hero.com/api/news/category/${params.id}`),
+                element: <CategoryNews />,
+                loader: ({ params }) => fetch(`https://openapi.programming-hero.com/api/news/category/${params.id}`),
             },
         ],
     },
@@ -24,8 +25,18 @@ const router = createBrowserRouter([
         element: <h1>News Layout</h1>
     },
     {
-        path: 'auth',
-        element: <h1>Login</h1>
+        path: '/auth',
+        element: <AuthLayout/>,
+        children: [
+            {
+                path: '/auth/login',
+                element: <h2>LOGIN PAGE</h2>
+            },
+            {
+                path: '/auth/register',
+                element: <h2>REG PAGE</h2>
+            },
+        ],
     },
     {
         path: "*",
