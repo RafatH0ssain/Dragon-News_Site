@@ -1,10 +1,13 @@
 import { Outlet } from "react-router-dom";
+import Navbar from "../components/Navbar";
 
 const AuthLayout = () => {
     return (
-        <div>
-            IUAWHDUWB
-            <Outlet/>
+        <div className="p-5 font-poppins bg-gray-300">
+            <header className="*:bg-inherit">
+                <Navbar/>
+            </header>
+            <Outlet />
         </div>
     );
 };
