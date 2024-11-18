@@ -16,7 +16,7 @@ const NewsDetails = () => {
             <Navbar />
             <main className="mx-auto grid grid-cols-12 gap-">
                 <section className="col-span-9">
-                    <h2 className="font-semi-bold mb-3">Dragon News</h2>
+                    <h2 className="font-bold text-3xl mb-3">Dragon News</h2>
                     <div className="card bg-base-100 shadow-xl">
                         <figure className="px-10 pt-10">
                             <img
