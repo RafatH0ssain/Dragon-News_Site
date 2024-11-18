@@ -27,7 +27,9 @@ const NewsCard = ({ news }) => {
                 <img src={news.image_url} alt={news.title} />
             </figure>
             <div className="card-body">
-                <p>{news.details}</p>
+                <p className="text-gray-700 text-sm mb-4">{news.details.slice(0, 150)}...{" "}
+                    <Link className="text-primary" to={`/news/${news._id}`}>Read More</Link>
+                </p>
                 <div className="justify-between flex-row flex">
                     <div className="flex flex-row">
                         {[...Array(5)].map((_, i) => (
