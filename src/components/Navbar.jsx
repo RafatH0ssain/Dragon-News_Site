@@ -42,7 +42,14 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="navbar-end login">
-                <img src={userIcon} alt="Dummy User Picture" className="px-4" />
+                {
+                    user && user?.email ?
+                        <div className="px-5">
+                            <img src={user.photoURL} alt={user.name} className="w-10 h-10 rounded-full"/>
+                            <p>{user.displayName}</p>
+                        </div> :
+                        <img src={userIcon} alt="Dummy User Picture" className="px-4" />
+                }
                 {user && user?.email ? (
                     <button onClick={logOut} className="btn btn-neutral rounded-none">Log Out</button>
                 ) : (

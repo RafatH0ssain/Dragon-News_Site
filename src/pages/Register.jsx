@@ -1,20 +1,47 @@
-import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { useContext, useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 import { AuthContext } from "../provider/AuthProvider";
 
 const Register = () => {
-    const { createUser } = useContext(AuthContext);
+    const { createUser, setUser, updateUserProfile } = useContext(AuthContext);
+    const [error, setError] = useState({});
+    const navigate = useNavigate();
     const handleSubmit = (e) => {
         e.preventDefault();
         const form = new FormData(e.target);
         const name = form.get("name");
+        if (name.length < 5) {
+            setError({ ...error, name: "Name must be more than 5 characters long!" });
+            return;
+        }
         const email = form.get("email");
+        // Simple email validation regex
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email)) {
+            setError({ ...error, email: "Please enter a valid email address!" });
+            return;
+        }
+
         const photo = form.get("photo");
+        // Simple URL validation regex
+        const urlRegex = /^(https?:\/\/)?([\da-z.-]+)\.([a-z.]{2,6})([/\w .-]*)*\/?$/;
+        if (!urlRegex.test(photo)) {
+            setError({ ...error, photo: "Please enter a valid URL!" });
+            return;
+        }
         const password = form.get("password");
 
         createUser(email, password)
             .then((result) => {
                 const user = result.user;
+                setUser(user);
+                updateUserProfile({displayName: name, photoURL: photo})
+                .then(() => {
+                    navigate("/");
+                })
+                .catch((err) => {
+                    console.log(err);
+                });
             })
             .catch((error) => {
                 const errorCode = error.code;
@@ -33,24 +60,44 @@ const Register = () => {
                             <span className="label-text">Name</span>
                         </label>
                         <input type="text" placeholder="Name" className="input input-bordered" required name="name" />
+                        {
+                            <label className="label text-xs text-rose-500">
+                                {error.name}
+                            </label>
+                        }
                     </div>
                     <div className="form-control">
                         <label className="label">
                             <span className="label-text">Photo URL</span>
                         </label>
                         <input type="text" placeholder="www.exampleImageURL.com" className="input input-bordered" required name="photo" />
+                        {
+                            <label className="label text-xs text-rose-500">
+                                {error.photo}
+                            </label>
+                        }
                     </div>
                     <div className="form-control">
                         <label className="label">
                             <span className="label-text">Email</span>
                         </label>
                         <input type="email" placeholder="email" className="input input-bordered" required name="email" />
+                        {
+                            <label className="label text-xs text-rose-500">
+                                {error.email}
+                            </label>
+                        }
                     </div>
                     <div className="form-control">
                         <label className="label">
                             <span className="label-text">Password</span>
                         </label>
                         <input type="password" placeholder="password" className="input input-bordered" required name="password" />
+                        {
+                            <label className="label text-xs text-rose-500">
+                                {error.password}
+                            </label>
+                        }
                         <label className="label">
                             <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
                         </label>
