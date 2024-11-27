@@ -1,8 +1,18 @@
-# React + Vite
+# Dragon News Site
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple and modern news website built with **HTML**, **CSS**, and **JavaScript**. Dragon News Site offers users the latest news and updates, providing a clean and user-friendly interface.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Responsive Design**: Fully responsive layout that adapts to various screen sizes, from mobile phones to desktop monitors.
+- **News Sections**: Displays different categories of news (e.g., Technology, Sports, Politics, Entertainment).
+- **Interactive User Interface**: Includes hover effects, smooth scrolling, and interactive elements.
+- **External APIs**: Fetches news data from external sources (e.g., News API) to display real-time information.
+
+## Technologies Used
+
+- **HTML5**: Structure and layout of the website.
+- **CSS3**: Styling of the website, including responsive design with media queries.
+- **JavaScript**: Adding interactivity to the site, including fetching data and DOM manipulation.
+- **News API**: For retrieving the latest news articles in various categories.
+
