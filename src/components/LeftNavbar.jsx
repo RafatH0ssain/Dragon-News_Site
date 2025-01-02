@@ -13,7 +13,7 @@ const LeftNavbar = () => {
 
     return (
         <div>
-            <h2 className="font-extrabold text-xl">All Categories</h2>
+            <h2 className="font-extrabold text-2xl">All Categories</h2>
             <div className="flex flex-col gap-2 py-3">
                 {
                     categories.map(category => 
