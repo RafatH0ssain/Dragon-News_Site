@@ -6,3 +6,7 @@
 a.active {
   background-color: #5555558d;
 }
+
+* {
+  background-color: white;
+}
