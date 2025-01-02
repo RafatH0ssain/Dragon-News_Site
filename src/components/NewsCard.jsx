@@ -24,14 +24,14 @@ const NewsCard = ({ news }) => {
                 <h2 className="card-title">{news.title}</h2>
             </div>
             <figure>
-                <img src={news.image_url} alt={news.title} />
+                <img src={news.image_url} alt={news.title} className="w-11/12 mx-auto"/>
             </figure>
             <div className="card-body">
                 <p className="text-gray-700 text-sm mb-4">{news.details.slice(0, 150)}...{" "}
-                    <Link className="text-primary" to={`/news/${news._id}`}>Read More</Link>
+                    <Link className="text-gray-400" to={`/news/${news._id}`}>Read More</Link>
                 </p>
                 <div className="justify-between flex-row flex">
-                    <div className="flex flex-row">
+                    <div className="flex flex-row items-center">
                         {[...Array(5)].map((_, i) => (
                             <AiFillStar
                                 key = {i}
@@ -43,8 +43,8 @@ const NewsCard = ({ news }) => {
                         ))}
                         <p>{news.rating.number}</p>
                     </div>
-                    <div className="flex">
-                        <FaEye/>
+                    <div className="flex items-center justify-between w-16">
+                        <div><FaEye/></div>
                         <p>{news.total_view}</p>
                     </div>
                 </div>

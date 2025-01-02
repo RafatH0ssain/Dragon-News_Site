@@ -2,6 +2,8 @@ import { Link } from "react-router-dom";
 import userIcon from "../assets/user.png";
 import React, { useContext, useState } from "react";
 import { AuthContext } from "../provider/AuthProvider";
+import { FaFontAwesome } from "react-icons/fa";
+import listIcon from "../assets/list.png";
 
 const Navbar = () => {
     const { user, logOut } = useContext(AuthContext);
@@ -9,15 +11,14 @@ const Navbar = () => {
     return (
         <div className="navbar bg-base-100">
             <div className="lg:flex w-full justify-between">
-                {/* Dropdown for small screens (sm and below) */}
                 <div className="dropdown sm:hidden">
-                    <label tabIndex={0} className="btn btn-ghost font-extrabold text-xl">V</label>
+                    <img src={listIcon} tabIndex={0} className="btn btn-ghost font-extrabold text-xl"/>
                     <ul
                         tabIndex={0}
-                        className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
-                        <li><Link to="/">Home</Link></li>
-                        <li><Link to="/career">Career</Link></li>
-                        <li><Link to="/about">About</Link></li>
+                        className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-40 p-2 shadow">
+                        <li><Link to="/" className="text-base py-1 font-semibold">Home</Link></li>
+                        <li><Link to="/career" className="text-base py-1 font-semibold">Career</Link></li>
+                        <li><Link to="/about" className="text-base py-1 font-semibold">About</Link></li>
                     </ul>
                 </div>
                 <div className="flex sm:w-full justify-between">

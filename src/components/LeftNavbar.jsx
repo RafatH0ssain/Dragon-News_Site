@@ -12,14 +12,22 @@ const LeftNavbar = () => {
     }, []);
 
     return (
-        <div>
+        <div className="w-full">
             <h2 className="font-extrabold text-2xl">All Categories</h2>
-            <div className="flex flex-col gap-2 py-3">
+            <div className="sm:flex flex-col sm:gap-2 py-3 grid grid-cols-2 gap-4 w-full">
                 {
-                    categories.map(category => 
-                        <NavLink key={category.category_id} className="btn bg-base-200" to={`/category/${category.category_id}`}>{category.category_name}</NavLink>)
+                    categories.map(category =>
+                        <NavLink
+                            key={category.category_id}
+                            className="btn text-base bg-base-200"
+                            to={`/category/${category.category_id}`}
+                        >
+                            {category.category_name}
+                        </NavLink>
+                    )
                 }
             </div>
+
         </div>
     );
 };

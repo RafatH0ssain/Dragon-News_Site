@@ -17,10 +17,10 @@ const HomeLayout = () => {
             <nav className="w-11/12 mx-auto py-3">
                 <Navbar />
             </nav>
-            <main className="w-11/12 mx-auto pt-5 grid md:grid-cols-12 gap-3">
-                <aside className="left col-span-3"><LeftNavbar/></aside>
-                <section className="col-span-6"><Outlet/></section>
-                <aside className="col-span-3"><RightNavbar/></aside>
+            <main className="w-11/12 mx-auto pt-5 grid sm:grid-cols-12 gap-3">
+                <aside className="sm:col-span-3 col-span-6 sticky mx-auto"><LeftNavbar /></aside>
+                <section className="col-span-6 sticky top-0"><Outlet /></section>
+                <aside className="sm:col-span-3 col-span-6"><RightNavbar /></aside>
             </main>
         </div>
     );
