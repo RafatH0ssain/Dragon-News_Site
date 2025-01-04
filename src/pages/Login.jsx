@@ -30,18 +30,18 @@ const Login = () => {
 
     return (
         <div className="bg-gray-300 min-h-screen flex justify-center items-start">
-            <div className="card bg-gray-300 w-full mx-auto rounded-2xl">
-                <h2 className="font-bold text-center text-3xl pt-5">Login your Account</h2>
+            <div className="card bg-gray-300 sm:w-1/2 w-3/4 px-auto">
+                <h2 className="font-bold text-center text-3xl text-black pt-5">Login your Account</h2>
                 <form onSubmit={handleSubmit} className="card-body">
                     <div className="form-control">
                         <label className="label">
-                            <span className="label-text">Email</span>
+                            <span className="label-text text-black ">Email</span>
                         </label>
                         <input type="email" placeholder="email" className="input input-bordered" required name="email"/>
                     </div>
                     <div className="form-control">
                         <label className="label">
-                            <span className="label-text">Password</span>
+                            <span className="label-text text-black">Password</span>
                         </label>
                         <input type="password" placeholder="password" className="input input-bordered" required name="password"/>
                         {
@@ -52,7 +52,7 @@ const Login = () => {
                             )
                         }
                         <label className="label">
-                            <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
+                            <a href="#" className="label-text-alt link link-hover text-gray-600">Forgot password?</a>
                         </label>
                     </div>
                     <div className="form-control mt-6">

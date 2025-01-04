@@ -9,7 +9,7 @@ const NewsDetails = () => {
     const data = useLoaderData();
     const news = data.data[0];
     return (
-        <div className="w-5/6 mx-auto">
+        <div className="sm:w-5/6 mx-auto">
             <header>
                 <Header className="pb-5" />
             </header>

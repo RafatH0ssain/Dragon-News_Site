@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../provider/AuthProvider";
 
 const Register = () => {
@@ -51,8 +51,8 @@ const Register = () => {
     };
 
     return (
-        <div className="mt-6 min-h-screen flex justify-center items-center">
-            <div className="card bg-base-100 w-full max-w-lg mx-auto shrink-0 rounded-none p-10">
+        <div className="sm:w-1/2 w-3/4 flex justify-center items-center mx-auto">
+            <div className="card bg-base-100 shrink-0 rounded-none py-10">
                 <h2 className="font-bold text-center text-3xl pt-5">Register your Account</h2>
                 <form className="card-body" onSubmit={handleSubmit}>
                     <div className="form-control">

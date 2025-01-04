@@ -13,13 +13,13 @@ const LeftNavbar = () => {
 
     return (
         <div className="w-full">
-            <h2 className="font-extrabold text-2xl">All Categories</h2>
+            <h2 className="font-extrabold text-black text-2xl">All Categories</h2>
             <div className="sm:flex flex-col sm:gap-2 py-3 grid grid-cols-2 gap-4 w-full">
                 {
                     categories.map(category =>
                         <NavLink
                             key={category.category_id}
-                            className="btn text-base bg-base-200"
+                            className="btn text-base text-black bg-gray-300 border-none"
                             to={`/category/${category.category_id}`}
                         >
                             {category.category_name}
