@@ -1,13 +1,35 @@
+import React from 'react';
 import { FaGoogle } from "react-icons/fa";
-import { FaGithub } from "react-icons/fa";
+import { getAuth, signInWithPopup, GoogleAuthProvider, GithubAuthProvider } from "firebase/auth";
+
+// Firebase providers for Google
+const googleProvider = new GoogleAuthProvider();
+
+const auth = getAuth();
 
 const SocialsLogin = () => {
+    const handleGoogleLogin = async () => {
+        try {
+            const result = await signInWithPopup(auth, googleProvider);
+            // This gives you a Google Access Token.
+            const credential = GoogleAuthProvider.credentialFromResult(result);
+            const token = credential.accessToken;
+            const user = result.user;
+            console.log('Google login success:', user);
+        } catch (error) {
+            console.error('Error during Google login:', error.message);
+        }
+    };
+
     return (
         <div>
-            <h2 className="font-extrabold text-2xl pb-3">Login With</h2>
-            <div className="*:w-full space-y-2">
-                <button className="btn btn-outline btn-info"><FaGoogle/> Login With Google</button>
-                <button className="btn btn-outline"><FaGithub/>Login with GitHub</button>
+            <div className="w-full space-y-2">
+                <button className="btn btn-outline btn-info" onClick={handleGoogleLogin}>
+                    <FaGoogle /> Login With Google
+                </button>
+                {/* <button className="btn btn-outline btn-secondary" onClick={handleGitHubLogin}>
+                    <FaGithub /> Login With GitHub
+                </button> */}
             </div>
         </div>
     );

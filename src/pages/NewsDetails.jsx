@@ -1,7 +1,6 @@
 import { useLoaderData } from "react-router-dom";
 import Header from "../components/Header";
 import Navbar from "../components/Navbar";
-import RightNavbar from "../components/RightNavbar";
 import { Link } from "react-router-dom";
 
 const NewsDetails = () => {
@@ -28,7 +27,7 @@ const NewsDetails = () => {
                             <h2 className="card-title text-3xl font-bold">{news?.title}</h2>
                             <p>{news?.details}</p>
                             <div className="card-actions">
-                                <Link className="btn bg-blue-500" to={`/category/${news?.category_id}`}>Back to Categories</Link>
+                                <Link className="btn bg-blue-500" to={`/category/${news?.category_id}`}>Back to Home</Link>
                             </div>
                         </div>
                     </div>
