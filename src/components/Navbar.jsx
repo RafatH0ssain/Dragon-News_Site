@@ -15,7 +15,7 @@ const Navbar = () => {
                     <img src={listIcon} tabIndex={0} className="btn btn-ghost font-extrabold text-xl"/>
                     <ul
                         tabIndex={0}
-                        className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-40 p-2 shadow">
+                        className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-40 p-2 shadow gap-2">
                         <li><Link to="/" className="text-base py-1 font-semibold border-none bg-gray-200">Home</Link></li>
                         <li><Link to="/career" className="text-base py-1 font-semibold border-none bg-gray-200">Career</Link></li>
                         <li><Link to="/about" className="text-base py-1 font-semibold border-none bg-gray-200">About</Link></li>
@@ -38,8 +38,6 @@ const Navbar = () => {
                                 </div> :
                                 <img src={userIcon} alt="Dummy User Picture" className="px-4" />
                         }
-
-
                         {user && user?.email ? (
                             <button onClick={logOut} className="btn bg-red-700 rounded-2xl sm:w-24 w-18 border-none sm:text-base text-xs text-black">Log Out</button>
                         ) : (
