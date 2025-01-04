@@ -34,7 +34,7 @@ const About = () => {
 
                 {/* Stats Section */}
                 <section className="my-12">
-                    <div className="stats shadow-2xl flex justify-center space-x-8">
+                    <div className="sm:stats shadow-2xl sm:flex justify-center sm:space-x-8">
                         {/* Daily Visitors */}
                         <div className="stat place-items-center">
                             <div className="stat-title">Daily Visitors</div>
