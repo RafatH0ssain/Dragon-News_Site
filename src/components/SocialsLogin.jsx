@@ -15,7 +15,7 @@ const SocialsLogin = () => {
             const credential = GoogleAuthProvider.credentialFromResult(result);
             const token = credential.accessToken;
             const user = result.user;
-            console.log('Google login success:', user);
+            console.log('Google login success:', user.displayName);
         } catch (error) {
             console.error('Error during Google login:', error.message);
         }
